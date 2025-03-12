@@ -114,23 +114,63 @@ export default function LandingPage() {
       </div>
 
       {/* Logos Section */}
-      <div className="pt-12 sm:pt-20 flex flex-wrap justify-center gap-6 max-w-4xl">
-        {[
-          "National Bank",
-          "mattered",
-          "CocaCola",
-          "Adobe",
-          "Subway",
-          "Codecademy",
-        ].map((logo, index) => (
-          <span
-            key={index}
-            className="text-lg font-semibold uppercase tracking-wide"
-          >
-            {logo}
-          </span>
-        ))}
+      <div className="relative overflow-hidden w-full bg-black py-22">
+        <div className="absolute inset-0 bg-gradient-to-r from-purple-500 via-blue-500 to-cyan-500 opacity-20 blur-3xl"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-transparent via-transparent to-black"></div>
+
+        <div className="flex overflow-hidden">
+          {/* Wrapper for smooth scrolling */}
+          <div className="flex gap-8 animate-scroll">
+            {[
+              { name: "Pacdora", src: "/images/Frame 8615.png" },
+              { name: "Canva", src: "/images/Group 8596.png" },
+              { name: "Miro", src: "/images/Group 8597.png" },
+              { name: "Image", src: "/images/Group 8600.png" },
+              { name: "Logo 1", src: "/images/Group 8601.png" },
+              { name: "Logo 2", src: "/images/Group 8602.png" },
+              { name: "Logo 3", src: "/images/Group 8605.png" },
+              { name: "Logo 4", src: "/images/Group 8607.png" },
+              { name: "Logo 5", src: "/images/Group 8608.png" },
+              { name: "Logo 6", src: "/images/Group 8609.png" },
+              { name: "Logo 7", src: "/images/Group 8610.png" },
+              { name: "Logo 8", src: "/images/Group 8611.png" },
+              { name: "Logo 9", src: "/images/Group 8613.png" },
+              { name: "Logo 10", src: "/images/Group 8615.png" },
+              { name: "Logo 11", src: "/images/image 2.png" },
+            ].map((logo, index) => (
+              <img
+                key={index}
+                src={logo.src}
+                alt={logo.name}
+                className="h-12 sm:h-16 md:h-20 object-contain drop-shadow-lg transition-transform duration-300 hover:scale-110"
+              />
+            ))}
+          </div>
+        </div>
       </div>
+
+      <style jsx>{`
+        @keyframes scroll {
+          from {
+            transform: translateX(0%);
+          }
+          to {
+            transform: translateX(-100%);
+          }
+        }
+        .animate-scroll {
+          display: flex;
+          min-width: 200%;
+          animation: scroll 40s linear infinite;
+        }
+
+        /* Responsive Tweaks */
+        @media (max-width: 640px) {
+          .animate-scroll img {
+            height: 10vh;
+          }
+        }
+      `}</style>
 
       <AboutPage />
       <PortfolioTV />
