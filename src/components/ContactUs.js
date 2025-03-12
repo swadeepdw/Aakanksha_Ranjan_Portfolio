@@ -33,41 +33,42 @@ const contactDetails = [
 
 const ContactUs = () => {
   return (
-    <div className="w-full flex justify-center my-10 px-4 md:px-10">
+    <div className="w-full flex justify-center my-12 px-4">
       <section
         id="contact"
-        className="w-full max-w-4xl text-center p-8 bg-black border border-white shadow-2xl rounded-xl transition-all duration-500"
+        className="w-full sm:w-[85%] text-center p-8 sm:p-12 relative overflow-hidden bg-black border border-white shadow-2xl rounded-xl hover:shadow-white/50 transition"
       >
-        <h2 className="text-3xl sm:text-4xl font-bold text-white uppercase tracking-widest mb-6 border-b-2 border-white inline-block pb-2">
+        <div className="absolute inset-0 bg-white opacity-10 blur-[120px] rounded-full"></div>
+        <h2 className="text-2xl sm:text-4xl font-bold text-white animate-bounce uppercase tracking-widest mb-4 border-b-2 border-white inline-block pb-2">
           🚀 Get in Touch
         </h2>
-        <p className="text-gray-300 text-base sm:text-lg max-w-3xl mx-auto mb-6">
+        <p className="text-gray-300 max-w-3xl mx-auto text-base sm:text-lg mb-6">
           Let’s build something amazing! Reach out for projects, collaborations,
           or just to say hi! ✨
         </p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-3xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-3xl mx-auto">
           {contactDetails.map((detail, index) => (
             <motion.div
               key={index}
-              whileHover={{ scale: 1.05 }}
-              className="flex items-center space-x-4 p-4 bg-white/10 backdrop-blur-md text-white rounded-lg border border-white shadow-lg hover:shadow-white/50 transition transform duration-300 cursor-pointer"
+              whileHover={{ scale: 1.1 }}
+              className="flex items-center p-4 bg-white/10 backdrop-blur-md text-white rounded-lg border border-white shadow-lg hover:shadow-white/50 transition transform duration-300 cursor-pointer"
             >
               {detail.link ? (
                 <a
                   href={detail.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center space-x-4 w-full"
+                  className="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-4 w-full"
                 >
-                  <span className="text-2xl sm:text-3xl">{detail.icon}</span>
-                  <span className="text-sm sm:text-lg font-semibold break-words">
+                  <span className="text-2xl">{detail.icon}</span>
+                  <span className="text-base font-semibold break-words">
                     {detail.text}
                   </span>
                 </a>
               ) : (
-                <div className="flex items-center space-x-4 w-full">
-                  <span className="text-2xl sm:text-3xl">{detail.icon}</span>
-                  <span className="text-sm sm:text-lg font-semibold break-words">
+                <div className="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-4 w-full">
+                  <span className="text-2xl">{detail.icon}</span>
+                  <span className="text-base font-semibold break-words">
                     {detail.text}
                   </span>
                 </div>
@@ -82,50 +83,50 @@ const ContactUs = () => {
 
 const DesignProcess = () => {
   return (
-    <div className="w-full flex justify-center px-4 md:px-10">
-      <section id="process" className="w-full max-w-4xl text-center py-12">
-        <h2 className="text-3xl sm:text-4xl font-bold text-white animate-pulse">
+    <div className="w-full flex justify-center px-4 py-12 sm:py-20">
+      <section id="process" className="w-full sm:w-[85%] text-center">
+        <h2 className="text-2xl sm:text-4xl font-bold text-white animate-pulse">
           My Design Process
         </h2>
-        <p className="mt-4 text-gray-300 text-base sm:text-lg max-w-3xl mx-auto">
+        <p className="mt-4 text-gray-300 max-w-3xl mx-auto text-base sm:text-lg">
           I follow a structured yet flexible approach to UI/UX design, ensuring
           optimal results with every project.
         </p>
-        <div className="mt-6 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 text-gray-300 text-sm sm:text-lg font-semibold">
+        <div className="mt-6 flex flex-wrap justify-center gap-4 sm:gap-8 text-gray-300 text-base sm:text-lg font-semibold">
           <motion.div
-            whileHover={{ scale: 1.1 }}
-            className="flex flex-col items-center"
+            whileHover={{ scale: 1.2 }}
+            className="flex flex-col items-center m-2"
           >
             <FaSearch className="text-cyan-400 text-3xl sm:text-4xl mb-2" />
             <span>Research</span>
           </motion.div>
           <motion.div
-            whileHover={{ scale: 1.1 }}
-            className="flex flex-col items-center"
+            whileHover={{ scale: 1.2 }}
+            className="flex flex-col items-center m-2"
           >
             <FaPencilRuler className="text-purple-400 text-3xl sm:text-4xl mb-2" />
             <span>Wireframing</span>
           </motion.div>
           <motion.div
-            whileHover={{ scale: 1.1 }}
-            className="flex flex-col items-center"
+            whileHover={{ scale: 1.2 }}
+            className="flex flex-col items-center m-2"
           >
             <FaPalette className="text-pink-400 text-3xl sm:text-4xl mb-2" />
             <span>Prototyping</span>
           </motion.div>
           <motion.div
-            whileHover={{ scale: 1.1 }}
-            className="flex flex-col items-center"
+            whileHover={{ scale: 1.2 }}
+            className="flex flex-col items-center m-2"
           >
             <FaCode className="text-green-400 text-3xl sm:text-4xl mb-2" />
             <span>Development</span>
           </motion.div>
           <motion.div
-            whileHover={{ scale: 1.1 }}
-            className="flex flex-col items-center"
+            whileHover={{ scale: 1.2 }}
+            className="flex flex-col items-center m-2"
           >
             <FaRocket className="text-orange-400 text-3xl sm:text-4xl mb-2" />
-            <span>Launch</span>
+            <span>Testing & Launch</span>
           </motion.div>
         </div>
       </section>
